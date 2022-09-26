@@ -25,7 +25,8 @@ public class Main {
 
         try {
             System.out.println("Массив arrExSize1");
-            app(arrExSize1);
+            int result = app(arrExSize1);
+            System.out.println("Сумма элементов: " + result);
         } catch (MyArraySizeException e) {
             System.out.println(e.getMessage());
         }
@@ -59,7 +60,7 @@ public class Main {
             System.out.println(e.getMessage());
         }
     }
-    public static void app (String[][] arr) {
+    public static int app (String[][] arr) {
         int sum = 0;
         int item;
 
@@ -83,7 +84,7 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println("Сумма элементов: " + sum);
+
+        return sum;
     }
 }
