@@ -12,7 +12,8 @@ public class Main {
         };
 
         System.out.println("Массив arr");
-        app(arr);
+        int result = app(arr);
+        System.out.println("Сумма элементов: " + result);
         System.out.println();
 
         String[][] arrExSize1 = {
@@ -25,24 +26,24 @@ public class Main {
 
         try {
             System.out.println("Массив arrExSize1");
-            int result = app(arrExSize1);
-            System.out.println("Сумма элементов: " + result);
+            app(arrExSize1);
         } catch (MyArraySizeException e) {
+            System.out.println();
             System.out.println(e.getMessage());
         }
         System.out.println();
 
         String[][] arrExSize2 = {
                 {"1", "1", "1", "1"},
-                {"2", "2", "2", "2"}, {"2"},
+                {"2", "2", "2", "2", "2"},
                 {"3", "3", "3", "3"},
-                {"4", "4", "4", "4"},
-                {"4", "4", "4", "4"},
+                {"4", "4", "4", "4"}
         };
         try {
             System.out.println("Массив arrExSize2");
             app(arrExSize2);
         } catch (MyArraySizeException e) {
+            System.out.println();
             System.out.println(e.getMessage());
         }
         System.out.println();
@@ -57,6 +58,7 @@ public class Main {
             System.out.println("Массив arrExData");
             app(arrExData);
         } catch (MyArrayDataException e) {
+            System.out.println();
             System.out.println(e.getMessage());
         }
     }
@@ -78,7 +80,7 @@ public class Main {
                     item = Integer.parseInt(arr[i][j]);
                 }
                 catch (NumberFormatException e) {
-                    throw new MyArrayDataException(" В ячейке [" + i + "]" + "[" + j + "] " + "лежит непреобразуемая строка");
+                    throw new MyArrayDataException("В ячейке [" + i + "]" + "[" + j + "] " + "лежит непреобразуемая строка");
                 }
                 sum += item;
             }
