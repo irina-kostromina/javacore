@@ -3,7 +3,6 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class App {
 
@@ -12,9 +11,15 @@ public class App {
     public static void main(String[] args) {
         String fileName = "file.csv";
         AppData data = new AppData(
-                "value1, value2"
-        )
-        writeFile(fileName, );
+                new String[] {"value1, value2"},
+                new int[][]{
+                        {1,2},
+                        {5,6}
+                }
+        );
+        writeFile(fileName, data);
+
+        AppData result = readFile(fileName);
     }
 
     public static void writeFile(String fileName, AppData appData) {
