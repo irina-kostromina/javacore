@@ -19,6 +19,7 @@ dependencies {
     implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.36.0.3'
     implementation group: 'com.github.javafaker', name: 'javafaker', version: '0.15'
     implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.36.0.3'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.6'
 }
 
 test {
